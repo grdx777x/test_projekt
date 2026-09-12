@@ -1,22 +1,23 @@
-# Companion AI
+# AfterDark — local-first AI companion
 
-Standalone AI character chat designed for local, private use.
+A static GitHub Pages companion app inspired by the feature set of modern AI companion platforms.
 
-## Features
-- No account or login required
-- Character catalog and search
-- Create and edit characters
-- Character personality prompts
-- Persistent chat history in browser localStorage
-- Local LLM inference with WebLLM/WebGPU
-- No external AI API key required
-- Responsive mobile layout
+## Current stack
+- GitHub Pages for free static hosting.
+- Browser-local LLM through WebLLM/WebGPU when supported.
+- Ollama as an optional stronger local backend.
+- Browser speech recognition and speech synthesis for Live/Voice.
+- localStorage for characters, conversations and memory.
+- No mandatory paid API, account or token system.
 
-## Run
-Open `index.html` from a static web server. WebGPU works best in current Chrome or Edge. On first AI use, the selected model is downloaded to the browser cache; subsequent sessions can reuse it.
+## AI
+Open **⚙ AI** in the app. **Uruchom AI w przeglądarce** loads a supported WebLLM model directly into the browser. The first download can be large and later runs use the browser cache. If WebGPU is unavailable, Ollama can be configured in the same panel.
+
+## Hosting
+GitHub Pages serves the static files. GitHub documents that Pages is available on public repositories under GitHub Free.
 
 ## Privacy
-Conversation and character data are stored locally in the browser. No application backend is required for the AI chat.
+Character data, chats and memory are stored in browser localStorage. A remote AI provider is only used when the user explicitly configures one.
 
 ## Important
-"Unlimited" here means the app does not impose a message quota and inference does not consume a hosted API quota. Actual speed, context size and storage depend on the user's device/browser.
+Free hosting does not mean unlimited remote compute. Browser-local inference avoids hosted token quotas, but speed and model size depend on the device. GitHub Pages can also take several minutes to publish a new commit.
